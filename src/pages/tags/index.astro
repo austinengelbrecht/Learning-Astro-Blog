@@ -1,6 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 const pageTitle = "Tag Index";
+const allPosts = await Astro.glob("../posts/*.md");
+const tags = [
+  "astro",
+  "successes",
+  "community",
+  "setbacks",
+  "learning in public",
+];
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    {tags.map((tag) => <li>{tag}</li>)}
+  </ul>
+</BaseLayout>

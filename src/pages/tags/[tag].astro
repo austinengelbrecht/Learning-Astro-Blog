@@ -26,9 +26,7 @@ const filteredPosts = posts.filter((post) =>
   <ul>
     {
       filteredPosts.map((post) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
+        <BlogPost url={post.url} title={post.frontmatter.title} />
       ))
     }
   </ul>
